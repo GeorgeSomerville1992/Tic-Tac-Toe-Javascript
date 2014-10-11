@@ -19,13 +19,13 @@
        // increment and decrement to swap between values each time..
                   // becaause as if the players are swapping each time as if there taking turns! 
       document.getElementById(btn).value = "X"
-      document.getElementById(btn).disabled = true
+      document.getElementById(btn).disabled = "disabled"
       completeGame();
       player +=1
       // $("btn").value = "X"
     }else{
       document.getElementById(btn).value = "O"
-      document.getElementById(btn).disabled = true
+      document.getElementById(btn).disabled = "disabled"
       completeGame();
       player -=1
       
@@ -99,6 +99,7 @@ function reset(){
   for(i=1 ;i <= 9; i++){
     console.log(i)
      $("#btn"+i).val("")
+     $("#btn"+i).removeAttr("disabled"); 
   }
   // $("#btn1,#btn2,#btn3,#btn4,#btn5").val("")
 }
