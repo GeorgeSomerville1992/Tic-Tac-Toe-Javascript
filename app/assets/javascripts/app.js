@@ -13,22 +13,20 @@
 
 
   var player = 1 
-  
   function clickBtn(btn){
     if(player == 1){
        // increment and decrement to swap between values each time..
                   // becaause as if the players are swapping each time as if there taking turns! 
       document.getElementById(btn).value = "X"
-      document.getElementById(btn).disabled = true
+      document.getElementById(btn).disabled = "disabled"
       completeGame();
       player +=1
       // $("btn").value = "X"
     }else{
       document.getElementById(btn).value = "O"
-      document.getElementById(btn).disabled = true
+      document.getElementById(btn).disabled = "disabled"
       completeGame();
       player -=1
-      
     } 
   } 
 // determining a winner ==========================================================================
@@ -63,8 +61,9 @@
       $("#btn5").val() == "X" && 
       $("#btn7").val() == "X"
        ){
-      alert("player" + player + " " + " wins!")
-      reset();
+      alert("helloooo!")
+      $("#player-one-win").show()
+      // need to disable buttons again....
     }else if($("#btn1").val() == "O" && 
       $("#btn2").val() == "O" && 
       $("#btn3").val() == "O" || 
@@ -90,8 +89,9 @@
       $("#btn5").val() == "O" && 
       $("#btn7").val() == "O"
       ){
-      alert("player" + player + " " + " wins!")
-      reset();
+      alert("hi!")
+      $("#player-two-win").show()
+      
     }      
   }  
 // reset function
@@ -99,6 +99,8 @@ function reset(){
   for(i=1 ;i <= 9; i++){
     console.log(i)
      $("#btn"+i).val("")
+     $("#btn"+i).removeAttr("disabled"); 
   }
+   $("#player-two-win,#player-one-win").hide()
   // $("#btn1,#btn2,#btn3,#btn4,#btn5").val("")
 }

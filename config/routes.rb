@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :players
+
   get 'home/index'
-  root to: 'home#index'
+  root to: 'players#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
