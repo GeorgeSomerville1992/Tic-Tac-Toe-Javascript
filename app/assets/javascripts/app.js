@@ -62,7 +62,7 @@
       $("#btn7").val() == "X"
        ){
       alert("helloooo!")
-      $("#player-one-win").show()
+      $("#player-one-win").css("visibility", "visible")
       // need to disable buttons again....
     }else if($("#btn1").val() == "O" && 
       $("#btn2").val() == "O" && 
@@ -90,7 +90,7 @@
       $("#btn7").val() == "O"
       ){ // disable buttons again.
       alert("hi!")
-      $("#player-two-win").show()
+      $("#player-two-win").css("visibility", "visible")
       
     }      
   }  
@@ -101,6 +101,6 @@ function reset(){
      $("#btn"+i).val("")
      $("#btn"+i).removeAttr("disabled"); 
   }
-   $("#player-two-win,#player-one-win").hide()
+   $("#player-two-win,#player-one-win").css("visibility", "hidden")
   // $("#btn1,#btn2,#btn3,#btn4,#btn5").val("")
 }

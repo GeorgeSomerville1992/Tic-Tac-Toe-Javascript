@@ -7,6 +7,10 @@
         - @player.errors.full_messages.each do |msg|
           %li= msg
   .large-6.columns
+    %img{src: "assets/naught.png"}   
+  .large-6.columns
+    %img{src: "assets/cross.png"}       
+  .large-6.columns
     .field
       = f.label :player_one_name
       = f.text_field :player_one_name
