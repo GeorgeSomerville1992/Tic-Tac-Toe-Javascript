@@ -18,7 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
