@@ -22,3 +22,16 @@
   background-color: red;
 };
 
+.naught-image{
+  width:100%;
+  height:200px;
+  background-image: image-url("cross.png");
+  background-repeat: no-repeat;
+}
+
+.cross-image{
+  width:100%;
+  height:200px;
+  background-image: image-url("naught.png");
+  background-repeat: no-repeat;
+}
