@@ -88,7 +88,7 @@
       $("#btn3").val() == "O" && 
       $("#btn5").val() == "O" && 
       $("#btn7").val() == "O"
-      ){
+      ){ // disable buttons again.
       alert("hi!")
       $("#player-two-win").show()
       

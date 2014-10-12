@@ -11,12 +11,12 @@
     = f.text_field :player_one_name
   .field
     = f.label :player_one_picture
-    = f.text_area :player_one_picture
+    = f.file_field :player_one_picture
   .field
     = f.label :player_two_name
     = f.text_field :player_two_name
   .field
     = f.label :player_two_picture
-    = f.text_area :player_two_picture
+    = f.file_field :player_two_picture
   .actions
     = f.submit 'Save'
