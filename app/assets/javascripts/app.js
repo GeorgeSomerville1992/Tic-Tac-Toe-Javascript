@@ -61,7 +61,6 @@
       $("#btn5").val() == "X" && 
       $("#btn7").val() == "X"
        ){
-      alert("helloooo!")
       $("#player-one-win").css("visibility", "visible")
       // need to disable buttons again....
     }else if($("#btn1").val() == "O" && 
@@ -89,7 +88,6 @@
       $("#btn5").val() == "O" && 
       $("#btn7").val() == "O"
       ){ // disable buttons again.
-      alert("hi!")
       $("#player-two-win").css("visibility", "visible")
       
     }      
