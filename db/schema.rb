@@ -13,7 +13,20 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "players", force: true do |t|
+    t.string   "player_one_name"
+    t.text     "player_one_picture"
+    t.string   "player_two_name"
+    t.text     "player_two_picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
 end

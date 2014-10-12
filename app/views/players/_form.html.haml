@@ -1,0 +1,28 @@
+/ funny picture of x and 0.
+= form_for @player do |f|
+  - if @player.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
+      %ul
+        - @player.errors.full_messages.each do |msg|
+          %li= msg
+  .large-6.columns
+    %img{src: "assets/naught.png"}   
+  .large-6.columns
+    %img{src: "assets/cross.png"}       
+  .large-6.columns
+    .field
+      = f.label :player_one_name
+      = f.text_field :player_one_name
+    .field
+      = f.label :player_one_picture
+      = f.file_field :player_one_picture
+  .large-6.columns    
+    .field
+      = f.label :player_two_name
+      = f.text_field :player_two_name
+    .field
+      = f.label :player_two_picture
+      = f.file_field :player_two_picture
+  .actions
+    = f.submit 'Save'

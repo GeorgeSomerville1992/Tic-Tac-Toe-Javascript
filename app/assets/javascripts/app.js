@@ -13,7 +13,6 @@
 
 
   var player = 1 
-  
   function clickBtn(btn){
     if(player == 1){
        // increment and decrement to swap between values each time..
@@ -28,7 +27,6 @@
       document.getElementById(btn).disabled = "disabled"
       completeGame();
       player -=1
-      
     } 
   } 
 // determining a winner ==========================================================================
@@ -63,8 +61,9 @@
       $("#btn5").val() == "X" && 
       $("#btn7").val() == "X"
        ){
-      alert("player" + player + " " + " wins!")
-      reset();
+      alert("helloooo!")
+      $("#player-one-win").css("visibility", "visible")
+      // need to disable buttons again....
     }else if($("#btn1").val() == "O" && 
       $("#btn2").val() == "O" && 
       $("#btn3").val() == "O" || 
@@ -89,9 +88,10 @@
       $("#btn3").val() == "O" && 
       $("#btn5").val() == "O" && 
       $("#btn7").val() == "O"
-      ){
-      alert("player" + player + " " + " wins!")
-      reset();
+      ){ // disable buttons again.
+      alert("hi!")
+      $("#player-two-win").css("visibility", "visible")
+      
     }      
   }  
 // reset function
@@ -101,5 +101,6 @@ function reset(){
      $("#btn"+i).val("")
      $("#btn"+i).removeAttr("disabled"); 
   }
+   $("#player-two-win,#player-one-win").css("visibility", "hidden")
   // $("#btn1,#btn2,#btn3,#btn4,#btn5").val("")
 }

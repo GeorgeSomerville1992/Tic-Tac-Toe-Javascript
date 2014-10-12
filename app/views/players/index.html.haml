@@ -1,0 +1,25 @@
+%h1 Listing players
+
+%table
+  %tr
+    %th Player one name
+    %th Player one picture
+    %th Player two name
+    %th Player two picture
+    %th
+    %th
+    %th
+
+  - @players.each do |player|
+    %tr
+      %td= player.player_one_name
+      %td= player.player_one_picture
+      %td= player.player_two_name
+      %td= player.player_two_picture
+      %td= link_to 'Show', player
+      %td= link_to 'Edit', edit_player_path(player)
+      %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Player', new_player_path
