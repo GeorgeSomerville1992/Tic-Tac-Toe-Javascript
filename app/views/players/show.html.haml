@@ -25,7 +25,15 @@
       %b Wins!!!
       %img{src: @player.player_one_picture, style: "width:300px; height:300px;"}
   .large-4.columns 
-    %p score tables go here...
+    #scoreBoard
+      %h3 score board
+      .large-2.columns
+        = @player.player_one_name 
+        #player-one-score
+      .large-2.columns 
+        = @player.player_two_name
+        #player-two-score
+        %button{:id => "submit-scores"} Submit Scores
   .large-4.columns  
     %p{:id => "player-two-win", :style => "visibility: hidden;"}
       = @player.player_two_name  

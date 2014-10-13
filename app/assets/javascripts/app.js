@@ -13,6 +13,11 @@
 
 
   var player = 1 
+  var playerOneScore = 0
+  var playerTwoScore = 0
+  // $("#player-one-score").append(playerOneScore)
+  // $("#player-two-score").append(playerTwoScore)
+
   function clickBtn(btn){
     if(player == 1){
        // increment and decrement to swap between values each time..
@@ -61,7 +66,10 @@
       $("#btn5").val() == "X" && 
       $("#btn7").val() == "X"
        ){
-      $("#player-one-win").css("visibility", "visible")
+          $("#player-one-win").css("visibility", "visible")
+          playerOneScore +=1 
+          $("#player-one-score").text(playerOneScore)
+
       // need to disable buttons again....
     }else if($("#btn1").val() == "O" && 
       $("#btn2").val() == "O" && 
@@ -89,7 +97,9 @@
       $("#btn7").val() == "O"
       ){ // disable buttons again.
       $("#player-two-win").css("visibility", "visible")
-      
+      $("#player-two-score").text("")
+      playerTwoScore += 1 
+      $("#player-two-score").text(playerTwoScore)
     }      
   }  
 // reset function
@@ -102,3 +112,25 @@ function reset(){
    $("#player-two-win,#player-one-win").css("visibility", "hidden")
   // $("#btn1,#btn2,#btn3,#btn4,#btn5").val("")
 }
+
+$("#submit-scores").on("click", function(e){
+  e.preventDefault(); 
+  var fields = ["player_one_score", "player_two_score"]
+  data = {}
+  $.each(fields, function(i,field){
+      data[field] = $('input[name="'+field+'"]').val()
+      console.log(data)
+  })
+  console.log(data)
+  
+  $.ajax({
+    type:POST,
+    url:"/players",
+    data:{player: data},
+    dataType:json,
+    success:function(){
+      console.log("done")
+      console.log({player:data})
+    }
+  })
+})
